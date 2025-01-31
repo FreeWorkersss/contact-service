@@ -1,0 +1,38 @@
+### 1. Добавить нового клиента
+POST http://localhost:8080/api/v1/clients
+Content-Type: application/json
+
+{
+  "name": "Unibell"
+}
+
+### 2. Добавить телефон клиенту
+POST http://localhost:8080/api/v1/clients/1/phones
+Content-Type: application/json
+
+{
+  "number": "123-456-7890"
+}
+
+### 3. Добавить Email клиенту
+POST http://localhost:8080/api/v1/clients/1/emails
+Content-Type: application/json
+
+{
+  "address": "unibell@example.com"
+}
+
+### 4. Получить список клиентов (с пагинацией)
+GET http://localhost:8080/api/v1/clients?page=0&size=10
+
+### 5. Получить информацию о клиенте по ID
+GET http://localhost:8080/api/v1/clients/1
+
+### 6. Получить список всех контактов клиента
+GET http://localhost:8080/api/v1/clients/1/contacts?page=0&size=5
+
+### 7. Получить список контактов по типу (phone или email)
+GET http://localhost:8080/api/v1/clients/1/contacts/email?page=0&size=5
+
+### 8. Пример для получения телефонных контактов
+GET http://localhost:8080/api/v1/clients/1/contacts/phone?page=0&size=5
